@@ -48,11 +48,12 @@ function renderCountriList(countries) {
 
 function renderBoxCountryInfo(countries) {
 const boxContent = countries.map(({name, capital, population, languages, flags}) => {
+  const languagesValue = Object.values(languages);
   return `<ul class="box-list">
   <li class="box-item"><img src="${flags.svg}" alt="прапор держави" width=40><h1> ${name.official}<h1></li>
   <li class="box-item">Capital:${capital}</li>
   <li class=box-item">Population:${population}</li>
-  <li class=box-item">Languages:${languages}</li>
+  <li class=box-item">Languages:${languagesValue}</li>
   </ul>`;
 });
 refs.country.innerHTML = '';
